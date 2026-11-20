@@ -44,7 +44,7 @@ It's a Portswigger's Academy lab. The SSRF vulnerability was found in the `stock
 
 Change the `stockApi` Parameter with this URL and send the request.
 
-![Change_URL](Change_URL.png)
+![Change_URL](POC/Change_URL.png)
 
 9. User `carlos` is successfully Deleted.
 
