@@ -50,3 +50,18 @@ Change the `stockApi` Parameter with this URL and send the request.
 
 ![Lab_completed](POC/Lab_completed.png)
 
+## 4. Impact
+
+- **Internal Resource Access:** An attacker can make the application server send requests to internal resources that are not directly accessible from the internet.
+- **Unauthorized Administrative Access:** The vulnerability allows access to the internal admin interface through the server.
+- **Unauthorized Actions:** By manipulating the `stockApi` parameter, an attacker can trigger administrative actions, such as deleting users, without directly accessing the admin endpoint.
+- **Potential Data Exposure:** Internal services or sensitive information accessible to the server may be exposed.
+
+## 5. Remediation
+
+- **Implement URL Allowlisting:** Only allow requests to trusted and predefined domains or URLs.
+- **Validate User Input:** Properly validate user-supplied URLs and reject unexpected destinations.
+- **Restrict Internal Network Access:** Prevent the application server from making requests to localhost, private IP addresses, and internal services unless explicitly required.
+- **Disable Unnecessary Redirects:** Restrict or validate redirects to prevent bypassing URL validation.
+- **Apply Network-Level Restrictions:** Use firewall rules and network segmentation to limit outgoing requests from the application server.
+
